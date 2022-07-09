@@ -50,7 +50,7 @@ function ProductsItem() {
                             <h3 className={sx('descriptionItem')}>{product.description}</h3>
                         </div>
                         <div className={sx('buttonCart')}>
-                            <Link to={'/carts'} className={sx('btnItem')}>
+                            <Link to={'/cart'} className={sx('btnItem')}>
                                 Go to cart
                             </Link>
                             <button onClick={hanldeBuy} className={sx('btnItem')}>

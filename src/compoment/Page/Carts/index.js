@@ -10,9 +10,9 @@ import Empty from '~/compoment/Popper/PopperEmpty/Empty';
 import { checkedAction } from '~/compoment/redux/actions';
 import OfterProduct from './ofter/ofterProduct';
 import Item from './Item';
-import styles from './carts.module.scss';
+import styles from './cart.module.scss';
 const sx = classNames.bind(styles);
-function Carts() {
+function Cart() {
     const [checkeds, setCheckeds] = useState([]);
     const [show, setShow] = useState(false);
     const [checkAll, setCheckAll] = useState(false);
@@ -115,7 +115,7 @@ function Carts() {
                     <div className={sx('footerTotal')}>
                         Total ({item} item): ${totals.toFixed(2)}
                     </div>
-                    <button onClick={handleCheckOut} className={sx('checkTotal')}>
+                    <button onClick={handleCheckOut} className={sx('footer-btn')}>
                         Check Out
                     </button>
                 </div>
@@ -130,4 +130,4 @@ function Carts() {
         </div>
     );
 }
-export default Carts;
+export default Cart;

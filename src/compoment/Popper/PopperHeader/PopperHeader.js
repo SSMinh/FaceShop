@@ -44,7 +44,7 @@ function PopperHeader() {
                                 <span className={sx('PopperPayProduct')}>
                                     {`${orderProducts.length} More Products In Cart`}{' '}
                                 </span>
-                                <Link to={'/carts'} className={sx('PopperPayCart')}>
+                                <Link to={'/cart'} className={sx('PopperPayCart')}>
                                     View My Shopping Cart
                                 </Link>
                             </div>

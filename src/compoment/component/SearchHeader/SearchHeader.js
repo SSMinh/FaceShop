@@ -48,7 +48,7 @@ function SearchHeader() {
     return (
         <div>
             <TippyHeadless
-                visible={searchResult.length > 0}
+                visible={newdatas.length > 0 && searchResult.length > 0}
                 interactive
                 render={(attrs) => (
                     <div className={sx('search-result')} tabIndex="-1" {...attrs}>

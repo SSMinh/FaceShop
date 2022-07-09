@@ -7,5 +7,5 @@ export const publicRouter = [
     { path: '/', component: Home },
     // {path:'/products', component: Products },
     { path: '/products/:id', component: ProductsItem },
-    { path: '/carts', component: Carts },
+    { path: '/cart', component: Carts },
 ];
