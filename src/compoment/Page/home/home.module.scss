@@ -1,0 +1,72 @@
+.wrapper {
+}
+.header-section__header {
+    background: #fff;
+    height: 4rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.findProducts {
+    border-bottom: 1px solid;
+    margin-bottom: 20px;
+    line-height: 4rem;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.54);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.inner {
+    margin-top: 40px;
+}
+.findProducts-button {
+    display: flex;
+    justify-content: center;
+
+    .find + .find {
+        margin-left: 10px;
+    }
+}
+.find {
+    width: 100px;
+    height: 100px;
+    font-size: 1.4rem;
+    padding: 4px 4px;
+    // border-radius: 999px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.findProducts-style {
+    height: 100px;
+    width: 100%;
+    display: flex;
+}
+.findProducts-styleItem {
+    width: 100%;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: rgba(0, 0, 0, 0.12);
+    span {
+        margin-top: 6px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.8);
+    }
+    &:hover {
+        box-shadow: 0 0 0.8125rem 0 rgb(0 0 0 / 5%);
+        transition: 0.16s ease-in;
+        transform: translateY(-4px);
+    }
+}
+.findProducts-styleItem-Bg {
+    height: 100%;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 80px;
+    border-radius: 9999px;
+    &:hover {
+        cursor: pointer;
+    }
+}

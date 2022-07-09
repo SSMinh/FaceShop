@@ -1,0 +1,63 @@
+ :root{
+    --text-footer: rgba(0,0,0,.54);
+ }
+ .wrapper{
+width: 100%;
+padding: 40px 0;
+border-top: 1px solid;
+ }
+ .customer-service{
+padding: 0;
+list-style: none;
+color: var(--text-footer);
+span{
+    margin-left:6px;
+    font-size: 1.2rem;
+    color: var(--text-footer);
+    &:hover{
+    color: black;
+    }
+}
+a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--text-footer);
+}
+ }
+.title-service{
+font-size: 1.2rem;
+font-weight: 600;
+color: var(--text-footer);
+}
+.service{
+font-size: 1.2rem;
+&:hover{
+    color: black;
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+}
+//ìnorApp
+.infoApp{
+display: flex;
+}
+.infoAppQr{
+    width: 86px;
+    height: 86px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+}
+.infoAppDownload{
+display: flex;
+flex-direction: column;
+}
+.infoAppDownload-item{
+ padding: 4px;
+width: 80;
+height: 28px;
+object-fit: contain;
+background-repeat: no-repeat;
+&:first-child{
+    margin-right: 14px;
+}
+}

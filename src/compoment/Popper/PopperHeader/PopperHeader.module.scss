@@ -1,0 +1,100 @@
+.wrapperPopper{
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    background-color: white;
+    box-shadow: 0 2px 10px #ccc;
+ 
+}
+.headerPopper{
+width: 100%;
+padding: 10px 0;
+line-height: 2rem;
+padding-left: 10px;
+background-color: white;
+color: rgba(0,0,0,.26);
+}
+.PopperWrapper{
+    width: 340px;
+    max-height: 380px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+//empty
+.popperEmpty{
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width:10rem;
+    height:10rem;
+    background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/9bdd8040b334d31946f49e36beaf32db.png');
+}
+.popperEmptyTitle{
+    color: rgba(0,0,0,.4);
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+//empty
+.PopperPay{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.PopperPayProduct{
+font-size: 1.2rem;
+}
+.PopperPayCart{
+    display: flex;
+font-size: 1.4rem;
+height: 3.4rem;
+padding: 0 6px;
+align-items: center;
+background-color: #f05240;
+color: white;
+&:hover{
+color: white;
+}
+}
+.carts{
+    position: relative;
+    width: 52px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.carts-products{
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+    background: rgb(254, 44, 85);
+    min-width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+.carts-title{
+    padding: 0 4px;
+}
+
+.arrowPopper{
+    &::before{
+        content: "";
+        position: absolute;
+        top: -45px;
+        right: -20px;
+        border-width: 24px 19px;
+        border-style: solid;
+        border-color: transparent transparent #fff transparent;
+        
+    }
+
+}
