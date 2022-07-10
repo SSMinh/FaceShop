@@ -1,11 +1,11 @@
 import Home from '../Page/home';
-import Products from '../component/Products';
-import Carts from '../Page/Carts';
+import Login from '../Page/Login/login';
+import Cart from '../Page/Carts';
 import ProductsItem from '../Page/ProductsItem';
 
 export const publicRouter = [
     { path: '/', component: Home },
-    // {path:'/products', component: Products },
+    { path: '/login', component: Login },
     { path: '/products/:id', component: ProductsItem },
-    { path: '/cart', component: Carts },
+    { path: '/cart', component: Cart },
 ];

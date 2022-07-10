@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import PopperHeader from '~/compoment/Popper/PopperHeader/PopperHeader';
 import styles from './Header.module.scss';
 import SearchHeader from '~/compoment/component/SearchHeader/SearchHeader';
+import LoginAvatar from './login';
 const sx = classNames.bind(styles);
 function Header() {
     return (
@@ -13,7 +14,13 @@ function Header() {
                     FakeShop
                 </Link>
                 <SearchHeader />
-                <PopperHeader />
+                <div className={sx('header-right')}>
+                    <div className={sx('header-login')}>
+                        {/* <button className={sx('header-login_btn')}>Login</button> */}
+                        <LoginAvatar />
+                    </div>
+                    <PopperHeader />
+                </div>
             </div>
         </div>
     );

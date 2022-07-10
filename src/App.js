@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DefaultLayOut from '~/compoment/Layout/DefaultLayout/DefaultLayout';
 import { publicRouter } from '~/compoment/routers';
-
+import AuthProvider from './compoment/component/authProvider/AuthProvide';
 function App() {
     return (
         <Router>
@@ -15,9 +15,11 @@ function App() {
                                 path={router.path}
                                 key={index}
                                 element={
-                                    <Layout>
-                                        <Page />
-                                    </Layout>
+                                    <AuthProvider>
+                                        <Layout>
+                                            <Page />
+                                        </Layout>
+                                    </AuthProvider>
                                 }
                             />
                         );
