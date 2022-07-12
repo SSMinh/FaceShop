@@ -21,7 +21,7 @@ function ProductsItem() {
             setLoading(false);
         };
         getProduct();
-    }, []);
+    }, [id]);
     const dispatch = useDispatch();
     const hanldeBuy = () => {
         dispatch(

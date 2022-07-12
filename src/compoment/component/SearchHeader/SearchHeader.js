@@ -1,10 +1,10 @@
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import axios from 'axios';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import TippyHeadless from '@tippyjs/react/headless';
 import { Link, useSearchParams } from 'react-router-dom';
+import productApi from '~/api/productApi';
 
 import SearchItem from './SearchItem';
 import styles from './SearchHeader.module.scss';
@@ -12,12 +12,15 @@ const sx = classNames.bind(styles);
 function SearchHeader() {
     const [datas, setDatas] = useState([]);
     const [newdatas, setNewDatas] = useState([]);
-    const [searchParams, setSearchParams] = useSearchParams();
     const [searchResult, setSearchResult] = useState('');
     useEffect(() => {
         const getProduct = async () => {
-            const response = await axios.get('https://fakestoreapi.com/products');
-            setDatas(response.data);
+            try {
+                const response = await productApi.getAll();
+                setDatas(response);
+            } catch (error) {
+                console.log(error);
+            }
         };
         getProduct();
     }, []);
@@ -31,9 +34,7 @@ function SearchHeader() {
             setSearchResult(values);
         }
     };
-    const hanldLink = (data) => {
-        let params = searchParams.get(data.id);
-        setSearchParams(params);
+    const hanldLink = () => {
         setSearchResult('');
     };
     const renderSearchItem = () => {

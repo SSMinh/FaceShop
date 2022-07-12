@@ -1,6 +1,7 @@
+import axios from 'axios';
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-
+import { getAuth} from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
     apiKey: 'AIzaSyBlxYFMYMxqbWGaLFLAO1umAw6pKuy0w7M',
     authDomain: 'fakeshop-c2988.firebaseapp.com',
@@ -11,4 +12,6 @@ const firebaseConfig = {
     measurementId: 'G-J5BM10VF6Q',
 };
 const app = initializeApp(firebaseConfig);
-export const authentication = getAuth(app);
+export const db = getFirestore();
+export const authentication = getAuth(app, {
+});

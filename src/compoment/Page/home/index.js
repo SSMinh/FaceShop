@@ -8,6 +8,7 @@ import Products from '../../component/Products';
 import SwiperSliders from './slider/swiperSliders';
 import WrapperLoading from '~/compoment/Loading/Loading';
 import image from '~/assets/image';
+import productApi from '~/api/productApi';
 
 const sx = classNames.bind(styles);
 function Home() {
@@ -44,9 +45,13 @@ function Home() {
     useEffect(() => {
         setLoading(true);
         const getProduct = async () => {
-            const response = await axios.get('https://fakestoreapi.com/products');
-            setDatas(response.data);
-            setLoading(false);
+            try {
+                const response = await productApi.getAll();
+                setDatas(response);
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+            }
         };
         getProduct();
     }, []);
@@ -75,13 +80,13 @@ function Home() {
     };
     return loading ? (
         <WrapperLoading>
-                    <SyncLoader color={'#F37A24'} size={10} />
+            <SyncLoader color={'#F37A24'} size={10} />
         </WrapperLoading>
     ) : (
         <div className={sx('wrapper container')}>
             <SwiperSliders />
             <div className={sx('header-section__header')}>
-            <div className={sx('findProducts')}> categories</div>
+                <div className={sx('findProducts')}> categories</div>
             </div>
             <div className={sx('findProducts-style')}>{renderCategories()}</div>
             <div className={sx('inner')}>

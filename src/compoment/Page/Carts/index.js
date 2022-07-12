@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import SyncLoader from 'react-spinners/SyncLoader';
+import { getAuth } from 'firebase/auth';
 
 import WrapperLoading from '~/compoment/Loading/Loading';
 import { listCarts, listBought } from '~/compoment/redux/selector';
@@ -11,8 +12,10 @@ import { checkedAction } from '~/compoment/redux/actions';
 import OfterProduct from './ofter/ofterProduct';
 import Item from './Item';
 import styles from './cart.module.scss';
+
 const sx = classNames.bind(styles);
 function Cart() {
+    const auth = getAuth();
     const [checkeds, setCheckeds] = useState([]);
     const [show, setShow] = useState(false);
     const [checkAll, setCheckAll] = useState(false);
@@ -50,6 +53,7 @@ function Cart() {
             setCheckeds((prev) => [...arr]);
         }
     };
+
     const handleCheck = (id) => {
         setCheckeds((prev) => {
             const isCheck = checkeds.includes(id);
@@ -61,13 +65,6 @@ function Cart() {
         });
     };
 
-    const handleCheckOut = () => {
-        if (checkeds.length > 0) {
-            dispatch(checkedAction(checkeds));
-            setCheckeds([]);
-            setLoadingCheck(true);
-        }
-    };
     const renderCheck = () => {
         return itemChecked.map((item, index) => (
             <div key={index} className={sx('wrapperItem')}>
@@ -91,6 +88,16 @@ function Cart() {
                 ),
         );
     };
+
+    const user = auth.currentUser;
+    const handleCheckOut = () => {
+        if (checkeds.length > 0 && user) {
+            dispatch(checkedAction(checkeds));
+            setCheckeds([]);
+            setLoadingCheck(true);
+        }
+    };
+
     return (
         <div className={sx('wrapper')} style={show ? null : { textAlign: 'center' }}>
             {show ? renderItem() : <Empty />}
@@ -115,9 +122,15 @@ function Cart() {
                     <div className={sx('footerTotal')}>
                         Total ({item} item): ${totals.toFixed(2)}
                     </div>
-                    <button onClick={handleCheckOut} className={sx('footer-btn')}>
+
+                   {user? (<button to="/login" onClick={handleCheckOut} className={sx('footer-btn')}>
                         Check Out
-                    </button>
+                    </button>):
+                    (
+                        <Link to="/login" className={sx('footer-btn')}>
+                        Check Out
+                    </Link>
+                    )}
                 </div>
             </div>
             <div className={sx('boughtCheck-titte')}>YOU MAY ALSO LIKE</div>

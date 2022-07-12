@@ -1,29 +1,53 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import { signInWithPopup, FacebookAuthProvider, GoogleAuthProvider, getAdditionalUserInfo } from 'firebase/auth';
+import { collection, addDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
+
 import styles from './login.module.scss';
-import { signInWithPopup, FacebookAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import { authentication } from '~/compoment/firebase/config';
+import { authentication, db } from '~/compoment/firebase/config';
 const sx = classNames.bind(styles);
 function Login() {
-    const singInWithFacebook = () => {
+    const navigate = useNavigate();
+
+    const singInWithFacebook = async () => {
         const provider = new FacebookAuthProvider();
-        signInWithPopup(authentication, provider)
-            .then((re) => {
-                console.log(re);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
+        try {
+            const data = await signInWithPopup(authentication, provider);
+            const { isNewUser, providerId } = getAdditionalUserInfo(data);
+            if (isNewUser) {
+                addDoc(collection(db, 'users'), {
+                    displayName: data.user.displayName,
+                    email: data.user.email,
+                    photoURL: data.user.photoURL,
+                    uid: data.user.uid,
+                    providerId: providerId,
+                });
+            }
+            navigate('/');
+        } catch (error) {
+            console.log('errr', error);
+        }
     };
-    const singInWithGoogle = () => {
+    const singInWithGoogle = async () => {
         const provider = new GoogleAuthProvider();
-        signInWithPopup(authentication, provider)
-            .then((re) => {
-                console.log(re);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
+        try {
+            const data = await signInWithPopup(authentication, provider);
+            const { isNewUser, providerId } = getAdditionalUserInfo(data);
+            if (isNewUser) {
+                addDoc(collection(db, 'users'), {
+                    displayName: data.user.displayName,
+                    email: data.user.email,
+                    photoURL: data.user.photoURL,
+                    uid: data.user.uid,
+                    providerId: providerId,
+                });
+                
+            }
+            navigate('/');
+        } catch (error) {
+            console.log('errr', error);
+        }
     };
 
     return (
