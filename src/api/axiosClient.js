@@ -1,8 +1,6 @@
 import axios from 'axios';
 import queryString from 'query-string';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-// Set up default config for http requests here
-// Please have a look at here `https://github.com/axios/axios#request- config` for the full list of configs
 const getFirebaseToke = async () => {
     const auth = getAuth();
     const currentUser = auth.currentUser;
@@ -36,7 +34,6 @@ const axiosClient = axios.create({
 });
 
 axiosClient.interceptors.request.use(async (config) => {
-    // Handle token here ...
     const token = await getFirebaseToke();
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
@@ -49,11 +46,9 @@ axiosClient.interceptors.response.use(
         if (response && response.data) {
             return response.data;
         }
-
         return response;
     },
     (error) => {
-        // Handle errors
         throw error;
     },
 );

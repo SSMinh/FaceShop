@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
-import styles from './Header.module.scss';
 import { getAuth } from 'firebase/auth';
 import { AuthContext } from '~/compoment/component/authProvider/AuthProvide';
 import { useContext } from 'react';
 
+import styles from './Header.module.scss';
 const sx = classNames.bind(styles);
 function LoginAvatar() {
     const data = useContext(AuthContext);

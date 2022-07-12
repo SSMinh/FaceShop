@@ -1,17 +1,12 @@
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
-import PopperHeader from '~/compoment/Popper/PopperHeader/PopperHeader';
 import styles from './Header.module.scss';
 import SearchHeader from '~/compoment/component/SearchHeader/SearchHeader';
 import LoginAvatar from './HeaderLogin';
+import PopperHeader from '~/compoment/Popper/PopperHeader/PopperHeader';
 const sx = classNames.bind(styles);
 function Header() {
-    // const auth = getAuth();
-    // let user = auth.currentUser;
-    // if (user === null) {
-    //     // auth.updateCurrentUser();
-    // }
     const hasRememberAccount = localStorage.getItem('user');
     return (
         <div className={sx('wrapper')}>
