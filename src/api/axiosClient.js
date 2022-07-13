@@ -6,7 +6,6 @@ const getFirebaseToke = async () => {
     const currentUser = auth.currentUser;
     if (currentUser) return currentUser;
     const hasRememberAccount = localStorage.getItem('user');
-
     if (!hasRememberAccount) return null;
     return new Promise((resolve, reject) => {
         const unregisterAuthObserver = onAuthStateChanged(auth, async (user) => {
@@ -24,7 +23,6 @@ const getFirebaseToke = async () => {
         });
     });
 };
-
 const axiosClient = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     headers: {

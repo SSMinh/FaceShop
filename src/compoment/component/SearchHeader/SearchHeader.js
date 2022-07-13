@@ -3,16 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import TippyHeadless from '@tippyjs/react/headless';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import productApi from '~/api/productApi';
 
 import SearchItem from './SearchItem';
 import styles from './SearchHeader.module.scss';
+import useDebounce from '~/compoment/component/hooks/useDebounce';
 const sx = classNames.bind(styles);
 function SearchHeader() {
     const [datas, setDatas] = useState([]);
     const [newdatas, setNewDatas] = useState([]);
     const [searchResult, setSearchResult] = useState('');
+    const debounce = useDebounce(searchResult, 500);
     useEffect(() => {
         const getProduct = async () => {
             try {
@@ -25,9 +27,9 @@ function SearchHeader() {
         getProduct();
     }, []);
     useEffect(() => {
-        const datarender = datas.filter((item) => item.title.includes(searchResult));
+        const datarender = datas.filter((item) => item.title.includes(debounce));
         setNewDatas(datarender);
-    }, [searchResult]);
+    }, [debounce]);
     const handleInput = (e) => {
         const values = e.target.value;
         if (!values.startsWith(' ')) {
@@ -41,7 +43,7 @@ function SearchHeader() {
         return newdatas.map((item) => {
             return (
                 <Link key={item.id} onClick={() => hanldLink(item)} to={`/products/${item.id}`}>
-                    <SearchItem data={item} />;
+                    <SearchItem data={item} />
                 </Link>
             );
         });
@@ -49,7 +51,7 @@ function SearchHeader() {
     return (
         <div>
             <TippyHeadless
-                visible={newdatas.length > 0 && searchResult.length > 0}
+                visible={newdatas.length > 0 && debounce.length > 0}
                 interactive
                 render={(attrs) => (
                     <div className={sx('search-result')} tabIndex="-1" {...attrs}>

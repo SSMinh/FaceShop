@@ -53,7 +53,7 @@ function Cart() {
             setCheckeds((prev) => [...arr]);
         }
     };
-
+    const hasRememberAccount = localStorage.getItem('user');
     const handleCheck = (id) => {
         setCheckeds((prev) => {
             const isCheck = checkeds.includes(id);
@@ -109,7 +109,7 @@ function Cart() {
                 </Link>
             )}
             <div className={sx('boughtCheck')}></div>
-            {itemChecked.length > 0 && <div className={sx('boughtCheck-titte')}>Đã mua</div>}
+            {hasRememberAccount && itemChecked.length > 0 && <div className={sx('boughtCheck-titte')}>Đã mua</div>}
             {renderCheck()}
             <div className={sx('footer')}>
                 <input
@@ -123,13 +123,14 @@ function Cart() {
                         Total ({item} item): ${totals.toFixed(2)}
                     </div>
 
-                   {user? (<button to="/login" onClick={handleCheckOut} className={sx('footer-btn')}>
-                        Check Out
-                    </button>):
-                    (
+                    {user ? (
+                        <button to="/login" onClick={handleCheckOut} className={sx('footer-btn')}>
+                            Check Out
+                        </button>
+                    ) : (
                         <Link to="/login" className={sx('footer-btn')}>
-                        Check Out
-                    </Link>
+                            Check Out
+                        </Link>
                     )}
                 </div>
             </div>

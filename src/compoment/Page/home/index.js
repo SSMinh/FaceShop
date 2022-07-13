@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import axios from 'axios';
 import SyncLoader from 'react-spinners/SyncLoader';
 
 import styles from './home.module.scss';
