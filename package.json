@@ -28,6 +28,7 @@
         "react-spinners": "^0.13.3",
         "redux": "^4.2.0",
         "redux-devtools-extension": "^2.13.9",
+        "skeleton": "^0.1.2",
         "swiper": "^8.2.6",
         "web-vitals": "^2.1.4"
     },
