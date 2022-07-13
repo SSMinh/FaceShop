@@ -30,7 +30,7 @@ function Cart() {
     useEffect(() => {
         const loading = setTimeout(() => {
             setLoadingCheck(false);
-        }, 1000);
+        }, 500);
         return () => clearTimeout(loading);
     }, [loadingCheck]);
     const totals = itemProduct.reduce((cou, res) => {

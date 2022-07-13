@@ -3,17 +3,13 @@ import axios from 'axios';
 import Products from '~/compoment/component/Products';
 function OfterProduct() {
     const [datas, setDatas] = useState([]);
-    // const [loading, setLoading]= useState(true)
     useEffect(() => {
-        // setLoading(true)
         const getProduct = async () => {
             const response = await axios.get('https://fakestoreapi.com/products');
             setDatas(response.data);
-            //  setLoading(false)
         };
         getProduct();
     }, []);
-
     const renderProduct = () => {
         const list = datas.filter((res) => {
             return res.rating.count >= 400;
@@ -32,5 +28,4 @@ function OfterProduct() {
         </div>
     );
 }
-
 export default OfterProduct;

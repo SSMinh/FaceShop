@@ -9,6 +9,5 @@ function useDebounce(value, delay) {
     }, [value]);
     return debounceValue;
 }
-
 export default useDebounce;
 

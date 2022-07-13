@@ -1,78 +1,81 @@
-.wrapper{
-display: flex;
-justify-content: space-between;
-width:100%;
-height: 600px;
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 600px;
 }
 
-@keyframes lineProducts{
-    from{
-    transform: translateY(0px);
+@keyframes lineProducts {
+    from {
+        transform: translateY(0px);
     }
-    to{
-    transform: translateY(-4px);
+    to {
+        transform: translateY(-4px);
     }
 }
-.imgItem{
-   border-top-left-radius: 8px;
-   border-top-right-radius: 8px;
-   object-fit: contain;
-   padding: 8px;
-   height: 500px;
-   max-width: 100%;
+.imgItem {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-fit: contain;
+    padding: 8px;
+    height: 500px;
+    max-width: 100%;
 }
-.informItem{
- width: 100%;
+.informItem {
+    width: 100%;
 }
-.informTitle{
-   height: 380px;
-   max-height: 100%;
+.informTitle {
+    height: 380px;
+    max-height: 100%;
 }
-.abcItem{
+.abcItem {
     font-size: 2rem;
     font-weight: bolder;
     text-transform: uppercase;
-    color: rgba(0, 0, 0,0.6);
+    color: rgba(0, 0, 0, 0.6);
     margin-bottom: 20px;
 }
-.nameItem{
+.nameItem {
     font-size: 3rem;
     line-height: 3.5rem;
 }
-.ratingItem{
-
+.ratingItem {
 }
-.descriptionItem{
+.descriptionItem {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
     overflow: hidden;
     text-overflow: ellipsis;
-font-size: 1.6rem;
-font-weight: 400;
-color: rgba(0, 0, 0,0.4);
-margin-bottom: 30px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
 }
-.sellItem{
- font-size: 3rem ;
- font-weight: bolder;
- margin: 20px 0;
+.sellItem {
+    font-size: 3rem;
+    font-weight: bolder;
+    margin: 20px 0;
 }
-.buttonCart{
+.buttonCart {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
-.btnItem{
+.btnWrapper + .btnWrapper {
+    margin-left: 40px;
+}
+
+.btnItem {
     display: flex;
     justify-content: center;
     background-color: white;
     font-weight: bolder;
     width: 200px;
     padding: 10px 20px;
-    border:1px  solid;
+    border: 1px solid;
     border-radius: 10px;
-&:hover{
-background-color: rgba(0, 0, 0,0.1);
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 }
-}
-
