@@ -49,7 +49,8 @@ function SearchHeader() {
         });
     };
     return (
-        <div>
+        //tippy
+        <div className={sx('wrapper')}>
             <TippyHeadless
                 visible={newdatas.length > 0 && debounce.length > 0}
                 interactive
@@ -59,12 +60,14 @@ function SearchHeader() {
                     </div>
                 )}
             >
-                <div className={sx('wrapper')}>
-                    <input className={sx('search-header')} value={searchResult} onChange={handleInput} />
-                    <button className={sx('search-icon')}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </button>
-                </div>
+                
+                    <div className={sx('inner')}>
+                        <input className={sx('search-header')} value={searchResult} onChange={handleInput} />
+                        <button className={sx('search-icon')}>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </button>
+                    </div>
+               
             </TippyHeadless>
         </div>
     );

@@ -1,17 +1,16 @@
-.wrapper{
-position: relative;
-min-height: 394px;
+.wrapper {
+    position: relative;
+    min-height: 394px;
 }
-.boughtCheck-titte{
+.boughtCheck-titte {
     display: flex;
     color: rgba(0, 0, 0, 0.4);
     font-size: 1.6rem;
     padding: 10px 0;
 }
 
-
 ///
-.linkShop{
+.linkShop {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 42px;
@@ -21,80 +20,79 @@ min-height: 394px;
     background: #ee4d2d;
     color: white;
     border-radius: 2px;
-    &:hover{
+    &:hover {
         color: white;
     }
 }
-.footer{
-display: flex;
-padding: 20px 0;
-justify-content: space-between;
-margin-top: 40px;
-position: sticky;
-bottom: 0;
-background-color: white;
+.footer {
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-between;
+    margin-top: 40px;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
 }
-.footerCheck{
+.footerCheck {
     display: flex;
 }
-.footerTotal{
-line-height: 42px;
-margin-right: 40px;
-font-size: 1.8rem;
+.footerTotal {
+    line-height: 42px;
+    margin-right: 20px;
+    font-size: 1.8rem;
 }
-.footer-btn{
-padding: 10px;
-border-radius: 4px ;
-color: white;
-background-color: #f05240;
+.footer-btn {
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: #f05240;
 }
-.wrapperItem{
-display: flex;
-position: relative;
-border-radius: 4px;
-overflow: hidden;
-    &:hover{
-        background-color: rgba(0,0,0,.05);
+.wrapperItem {
+    display: flex;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
     }
-    &:hover .productDelete{
-        animation: actives linear .12s forwards;
+    &:hover .productDelete {
+        animation: actives linear 0.12s forwards;
     }
 }
-.item{
-display: flex;
-flex: 1;
-align-items: center;
-height: 80px;
-margin: 10px 0;
-justify-content: space-between;
-
+.item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: 80px;
+    margin: 10px 0;
+    justify-content: space-between;
 }
 @keyframes actives {
-    from{
+    from {
         transform: translateX(100%);
     }
-    to{
+    to {
         transform: translateX(0);
         opacity: 1;
     }
 }
-.inner{
+.inner {
     display: flex;
     height: 80px;
 }
-.checkItem{
-    width: 20px;
+.checkItem {
+    min-width: 20px;
     margin: 0 20px;
 }
-.productItem{
-height: 100%;
-padding: 8px 0;
-width: 80px;
-object-fit: contain;
-background-repeat: no-repeat;
-border-radius: 2px;
+.productItem {
+    height: 100%;
+    padding: 8px 0;
+    width: 80px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    border-radius: 2px;
 }
-.profile{
+.profile {
     display: flex;
     flex-direction: column;
     padding: 5px 20px 0 10px;
@@ -102,25 +100,25 @@ border-radius: 2px;
     width: 243.5px;
     line-height: 1.6rem;
     overflow: hidden;
-    span{
+    span {
         text-align: left;
     }
 }
-.productName{
-margin-bottom: 5px;
+.productName {
+    margin-bottom: 5px;
 }
 .productName,
-.productTitle{
- display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 2;
- overflow: hidden;
- text-overflow: ellipsis;
+.productTitle {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.productTitle{
+.productTitle {
     color: #ee4d2d;
 }
-.productAmount{
+.productAmount {
     width: 50px;
     border-left: 0;
     border-right: 0;
@@ -132,35 +130,34 @@ margin-bottom: 5px;
     border-radius: 0;
     -webkit-appearance: none;
 }
-.productPrice{
-font-size: 1.4rem;
-
+.productPrice {
+    font-size: 1.4rem;
 }
-.productQuantity{
-display:flex;
-justify-content: center;
-align-items: center;
-width: 20%;
-color: rgba(0,0,0,.87);
+.productQuantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    color: rgba(0, 0, 0, 0.87);
 }
 .productReduced,
-.productIncrease{
-padding: 10px 15px;
-font-size: 2rem;
-background-color: transparent;
+.productIncrease {
+    padding: 10px 15px;
+    font-size: 2rem;
+    background-color: transparent;
 }
-.productCheck{
+.productCheck {
     font-size: 1.4rem;
     width: 20px;
     margin-right: 60px;
-    color: rgba(38,206,7,0.8);
+    color: rgba(38, 206, 7, 0.8);
 }
-.productDelete{
-position: absolute;
-right: 0;
-top: 0;
-height: 100%;
-padding: 10px;
-background-color: rgba(254, 44, 85,.4);
-opacity: 0;
+.productDelete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 10px;
+    background-color: rgba(254, 44, 85, 0.4);
+    opacity: 0;
 }

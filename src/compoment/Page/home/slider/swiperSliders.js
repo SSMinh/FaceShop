@@ -39,7 +39,7 @@ function SwiperSliders() {
     return (
         <div className={sx('wrapper container my-4')}>
             <div className={sx('full-banner row ')}>
-                <div className={sx('left-banner col-md-12 col-lg-8 d-sm-none d-md-block')}>
+                <div className={sx('left-banner col-md-12 col-lg-8 d-none d-md-block')}>
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay, A11y]}
                         spaceBetween={50}
@@ -65,7 +65,7 @@ function SwiperSliders() {
                     </Swiper>
                 </div>
                 <div className={sx('right-banner col-md-12 col-lg-4')}>
-                    <div className={sx('bannerHome  d-sm-none d-md-flex flex-md-column align-items-md-center h-100')}>
+                    <div className={sx('bannerHome  d-none d-md-flex flex-md-column align-items-md-center h-100')}>
                         {renderTitle()}
                     </div>
                 </div>

@@ -14,7 +14,7 @@ function Header() {
                 <Link to={'/'} className={sx('header-titte')}>
                     FakeShop
                 </Link>
-                <SearchHeader />
+                 <SearchHeader />
                 <div className={sx('header-right')}>
                     <div className={sx('header-login')}>
                         {hasRememberAccount ? (

@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import Products from '~/compoment/component/Products';
+import productApi from '~/api/productApi';
 function OfterProduct() {
     const [datas, setDatas] = useState([]);
     useEffect(() => {
         const getProduct = async () => {
-            const response = await axios.get('https://fakestoreapi.com/products');
-            setDatas(response.data);
+            try {
+                const response = await productApi.getAll();
+                setDatas(response);
+            } catch (error) {
+                console.log(error);
+            }
         };
         getProduct();
     }, []);
@@ -16,7 +20,7 @@ function OfterProduct() {
         });
         return list.map((product) => {
             return (
-                <div key={product.id} className="col-md-2 d-sm-none d-md-block mb-4">
+                <div key={product.id} className="col-md-2 col-4 mb-4">
                     <Products data={product} />
                 </div>
             );

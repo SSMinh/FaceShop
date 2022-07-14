@@ -1,5 +1,10 @@
 .wrapper {
-    width: 361px;
+    margin: 0 20px;
+    max-width: 362px;
+    width: 100%;
+}
+.inner {
+    width: 100%;
     height: 46px;
     font-size: 1.6rem;
     align-items: center;
@@ -15,7 +20,7 @@
     border: 1px solid rgba(0, 0, 0, 0.09);
     background-color: white;
     box-shadow: 0 2px 10px #ccc;
-    width: 361px;
+    width: 100%;
     padding: 10px 0;
     max-height: 400px;
     border-radius: 8px;
@@ -24,7 +29,7 @@
 
 .search-header {
     height: 100%;
-    width: 292px;
+    width: 100%;
     line-height: 2.2rem;
     font-size: 1.6rem;
     background-color: transparent;
