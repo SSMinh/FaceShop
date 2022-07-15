@@ -16,11 +16,11 @@ function Header() {
                 </Link>
                  <SearchHeader />
                 <div className={sx('header-right')}>
-                    <div className={sx('header-login')}>
+                    <div className={sx('header-login ')}>
                         {hasRememberAccount ? (
                             <LoginAvatar />
                         ) : (
-                            <Link to={'/login'} className={sx('header-login_btn')}>
+                            <Link to={'/login'} className={sx('header-login_btn d-none d-md-flex')}>
                                 Log in
                             </Link>
                         )}

@@ -28,7 +28,7 @@ function LoginAvatar() {
         >
             <div className={sx('wrapperAvatar')}>
                 <img className={sx('avatar')} src={data.user.photoURL} alt="avatar" />
-                <span>{data.user.displayName}</span>
+                <span className={sx('d-none d-md-flex')}>{data.user.displayName}</span>
             </div>
         </Tippy>
     );

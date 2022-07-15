@@ -55,7 +55,6 @@ function ProductsItem() {
                                     Go to cart
                                 </Link>
                             </div>
-                            ;
                             <div className={sx('btnWrapper')}>
                                 <button onClick={hanldeBuy} className={sx('btnItem')}>
                                     Buy
