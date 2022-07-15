@@ -110,7 +110,7 @@ function Cart() {
             )}
             <div className={sx('boughtCheck')}></div>
             {hasRememberAccount && itemChecked.length > 0 && <div className={sx('boughtCheck-titte')}>Đã mua</div>}
-            {renderCheck()}
+            {hasRememberAccount && renderCheck()}
             <div className={sx('footer')}>
                 <input
                     className={sx('checkItem')}
