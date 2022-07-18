@@ -61,7 +61,6 @@ function SearchHeader() {
                     </div>
                 )}
             >
-
                 <div className={sx('inner')}>
                     <input className={sx('search-header')} value={searchResult} onChange={handleInput} />
                     <button className={sx('search-icon')}>

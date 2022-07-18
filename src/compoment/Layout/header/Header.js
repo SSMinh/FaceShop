@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
-import { faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react'
 import styles from './Header.module.scss';
@@ -8,8 +8,13 @@ import SearchHeader from '~/compoment/component/SearchHeader/SearchHeader';
 import LoginAvatar from './HeaderLogin';
 import PopperHeader from '~/compoment/Popper/PopperHeader/PopperHeader';
 import HeaderBar from './headerBar/bar';
+import { useSelector } from 'react-redux';
+import { listCarts } from '~/compoment/redux/selector';
+import CartHeader from '~/compoment/Popper/PopperHeader/CartHeader';
+
 const sx = classNames.bind(styles);
 function Header() {
+    const cartProducts = useSelector(listCarts);
     const hasRememberAccount = localStorage.getItem('user');
     const [show, setShow] = useState(false)
     const hanldeShowBar = (text) => {
@@ -48,7 +53,7 @@ function Header() {
                     <PopperHeader />
                     <div className=' d-block d-md-none '>
                         <Link to={'/cart'} className={sx('carts')}>
-                            <FontAwesomeIcon icon={faCartShopping} />
+                            <CartHeader data={cartProducts} />
                         </Link>
                     </div>
 
