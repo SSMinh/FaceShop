@@ -17,6 +17,7 @@ function HeaderBar({ onShow }) {
     const data = useContext(AuthContext);
     const handleLogout = () => {
         auth.signOut();
+        window.location.reload();
     };
     return (<div className={sx('wrapper')} >
         <div className={sx('inner')}>

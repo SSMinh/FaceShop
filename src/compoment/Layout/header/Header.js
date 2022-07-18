@@ -36,14 +36,16 @@ function Header() {
                     <SearchHeader />
                 </div>
                 <div className={sx('right')}>
-                    <div className={sx('login ')}>
-                        {hasRememberAccount ? (
-                            <LoginAvatar />
-                        ) : (
-                            <Link to={'/login'} className={sx('login_btn d-none d-md-flex')}>
-                                Log in
-                            </Link>
-                        )}
+                    <div className={sx('d-none d-sm-none d-md-block')}>
+                        <div className={sx('login ')}>
+                            {hasRememberAccount ? (
+                                <LoginAvatar />
+                            ) : (
+                                <Link to={'/login'} className={sx('login_btn d-none d-md-flex')}>
+                                    Log in
+                                </Link>
+                            )}
+                        </div>
                     </div>
                     <PopperHeader />
                     <div className=' d-block d-md-none '>
