@@ -65,13 +65,15 @@
 .btnWrapper + .btnWrapper {
     margin-left: 6px;
 }
-
+.btnWrapper {
+    max-width: 200px;
+}
 .btnItem {
     display: flex;
+    width: 150px;
     justify-content: center;
     background-color: white;
     font-weight: bolder;
-    width: 200px;
     padding: 10px 20px;
     border: 1px solid;
     border-radius: 10px;

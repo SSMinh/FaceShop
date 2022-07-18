@@ -39,13 +39,16 @@
 .footerTotal {
     line-height: 42px;
     margin-right: 20px;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 .footer-btn {
     padding: 10px;
     border-radius: 4px;
     color: white;
     background-color: #f05240;
+    &:hover {
+        color: white;
+    }
 }
 .wrapperItem {
     display: flex;
@@ -132,6 +135,11 @@
 }
 .productPrice {
     font-size: 1.4rem;
+    margin-left: 100px;
+}
+.productPrice.re {
+    font-size: 1.4rem;
+    margin: 10px 0;
 }
 .productQuantity {
     display: flex;

@@ -20,7 +20,7 @@
     border: 1px solid rgba(0, 0, 0, 0.09);
     background-color: white;
     box-shadow: 0 2px 10px #ccc;
-    width: 100%;
+    max-width: 332px;
     padding: 10px 0;
     max-height: 400px;
     border-radius: 8px;
@@ -49,11 +49,9 @@
 }
 .wrapperPopper {
     display: flex;
-    width: 100%;
     align-items: center;
     height: 64px;
     padding: 10px;
-    //   overflow: hidden;
     &:hover {
         background-color: #f8f8f8;
     }
@@ -76,13 +74,11 @@
     font-weight: 400;
     -webkit-box-orient: vertical;
     width: 200px;
-    //     -webkit-line-clamp:3;
-    //     max-width: 60%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.sell {
+.cartprice {
     font-size: 1.4rem;
     font-weight: 600;
 }

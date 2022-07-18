@@ -52,13 +52,15 @@ function PopperHeader() {
                 </div>
             )}
         >
-            <div className={sx('carts')}>
-                <FontAwesomeIcon icon={faCartShopping} />
-                {show && (
-                    <div className={sx('carts-products')}>
-                        <span className={sx('carts-title')}>{cartProducts.length}</span>
-                    </div>
-                )}
+            <div className=' d-none d-md-block '>
+                <div className={sx('carts')}>
+                    <FontAwesomeIcon icon={faCartShopping} />
+                    {show && (
+                        <div className={sx('carts-products')}>
+                            <span className={sx('carts-title')}>{cartProducts.length}</span>
+                        </div>
+                    )}
+                </div>
             </div>
         </Tippy>
     );

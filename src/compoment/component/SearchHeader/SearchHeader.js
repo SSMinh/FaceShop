@@ -1,7 +1,7 @@
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 import TippyHeadless from '@tippyjs/react/headless';
 import { Link } from 'react-router-dom';
 import productApi from '~/api/productApi';
@@ -50,6 +50,7 @@ function SearchHeader() {
     };
     return (
         //tippy
+
         <div className={sx('wrapper')}>
             <TippyHeadless
                 visible={newdatas.length > 0 && debounce.length > 0}
@@ -60,16 +61,16 @@ function SearchHeader() {
                     </div>
                 )}
             >
-                
-                    <div className={sx('inner')}>
-                        <input className={sx('search-header')} value={searchResult} onChange={handleInput} />
-                        <button className={sx('search-icon')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-               
+
+                <div className={sx('inner')}>
+                    <input className={sx('search-header')} value={searchResult} onChange={handleInput} />
+                    <button className={sx('search-icon')}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </button>
+                </div>
+
             </TippyHeadless>
         </div>
     );
 }
-export default SearchHeader;
+export default memo(SearchHeader);

@@ -20,20 +20,25 @@
     line-height: 100%;
     align-items: center;
 }
-.header-titte {
+.bar {
+    height: 62px;
+    padding: 0 20px;
+    background-color: transparent;
+}
+.left {
     font-size: 2.5rem;
     font-weight: 700;
 }
-.header-right {
+.right {
     display: flex;
     align-items: center;
     min-width: 100px;
 }
-.header-login {
+.login {
     height: 100%;
     margin-right: 40px;
 }
-.header-login_btn {
+.login_btn {
     display: flex;
     font-weight: 500;
     font-size: 1.6rem;
@@ -70,4 +75,13 @@
             background-color: #f8f8f8;
         }
     }
+}
+.carts {
+    position: relative;
+    width: 52px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
 }

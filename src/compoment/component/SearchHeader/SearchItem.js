@@ -7,7 +7,7 @@ function SearchItem({ data }) {
             <img className={sx('ImgProducts')} src={data.image} />
             <div className={sx('cart')}>
                 <h4 className={sx('cartTitle')}>{data.title}</h4>
-                <span className={sx('sell')}>{data.price} $</span>
+                <span className={sx('cartprice')}>{data.price} $</span>
             </div>
         </div>
     );

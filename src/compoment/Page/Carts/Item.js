@@ -22,28 +22,45 @@ function Item({ data }) {
     };
     return (
         <div className={sx('item')}>
+
             <div style={data.completed ? { marginLeft: '60px' } : null} className={sx('inner')}>
                 <img className={sx('productItem')} src={data.image} />
                 <div className={sx('profile')}>
                     <span className={sx('productName')}>{data.title}</span>
-                    <span className={sx('productTitle')}>{data.description}</span>
+                    <div className={sx('d-none d-md-block')}>
+                        <span className={sx('productTitle')}>{data.description}</span>
+                    </div>
+                    <div className={sx('d-block d-md-none')}>
+                        <div className={sx('productPrice re text-start')}>${data.total.toFixed(2)}</div>
+                        <div className={sx('productQuantity')}>
+                            <button onClick={() => hanldeReduced(data)} className={sx('productReduced')}>
+                                -
+                            </button>
+                            <div className={sx('productAmount')}>{data.qyt}</div>
+                            <button onClick={() => hanldeIncrease(data)} className={sx('productIncrease')}>
+                                +
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className={sx('productPrice')}>${data.total.toFixed(2)}</div>
-            <div className={sx('productQuantity')}>
-                <button onClick={() => hanldeReduced(data)} className={sx('productReduced')}>
-                    -
-                </button>
-                <div className={sx('productAmount')}>{data.qyt}</div>
-                <button onClick={() => hanldeIncrease(data)} className={sx('productIncrease')}>
-                    +
-                </button>
-            </div>
-            <div className={sx('productCheck')}>{data.completed && <FontAwesomeIcon icon={faCircleCheck} />}</div>
+            <div className={sx('d-none d-md-flex align-items-center justify-content-md-between flex-fill')}>
+                <div className={sx('productPrice')}>${data.total.toFixed(2)}</div>
+                <div className={sx('productQuantity')}>
+                    <button onClick={() => hanldeReduced(data)} className={sx('productReduced')}>
+                        -
+                    </button>
+                    <div className={sx('productAmount')}>{data.qyt}</div>
+                    <button onClick={() => hanldeIncrease(data)} className={sx('productIncrease')}>
+                        +
+                    </button>
+                </div>
+                <div className={sx('productCheck')}>{data.completed && <FontAwesomeIcon icon={faCircleCheck} />}</div>
+            </div >
             <button onClick={() => hanldeDelete(data)} className={sx('productDelete')}>
                 <FontAwesomeIcon icon={faTrashCan} />
             </button>
-        </div>
+        </div >
     );
 }
 

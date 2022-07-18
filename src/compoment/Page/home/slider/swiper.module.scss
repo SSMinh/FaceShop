@@ -1,78 +1,73 @@
-:root{
-    --height-banner:250px;
+:root {
+    --height-banner: 250px;
 }
-.banner1{
-    width: 800px;
-background-image:url('https://cf.shopee.vn/file/c973fef8aee7a0a67abf32e96ae851c7_xxhdpi') ;
-background-size: cover;
-background-repeat: no-repeat;
-padding-top: var(--height-banner);
+.banner1 {
+    height: 200px;
+
+    background: url('https://cf.shopee.vn/file/c973fef8aee7a0a67abf32e96ae851c7_xxhdpi') center center / cover no-repeat;
 }
-.banner2{
-    width: 800px;
-background-image: url('https://cf.shopee.vn/file/56b87b79f03927fdb91cf2a599a3b03e_xxhdpi');
-background-size: cover;
-background-repeat: no-repeat;
-padding-top: var(--height-banner);
+.banner2 {
+    background: url('https://cf.shopee.vn/file/56b87b79f03927fdb91cf2a599a3b03e_xxhdpi') center center / cover
+        no-repeat;
+    height: 200px;
 }
-:root{
-    --height-banner:250px;
+:root {
+    --height-banner: 250px;
 }
-.wrapper{
- width: var(--PrimaryWidth);
- margin: 0 auto;
- height: var(--height-banner);
+.wrapper {
+    width: var(--PrimaryWidth);
+    margin: 0 auto;
+    height: var(--height-banner);
 }
-.full-banner{
+.full-banner {
     display: flex;
     min-height: 250px;
     max-height: 250px;
     overflow: hidden;
 }
-.left-banner{
+.left-banner {
     width: 65%;
     overflow: hidden;
 }
-.bannerHome{
+.bannerHome {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding:4px;
-
- }
-.right-banner{
+    padding: 4px;
+}
+.right-banner {
     width: 35%;
     background-color: white;
     height: 100%;
     margin-left: 8px;
     overflow: hidden;
 }
-.bannerAssets{
-display: flex;
-height: 100%;
-align-items: center;;
-width: 100%;
-.bannerAssets + .bannerAssets{
-    margin-right: 20px;
+.bannerAssets {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    .bannerAssets + .bannerAssets {
+        margin-right: 20px;
+    }
 }
-}
-.bannerAssets-img{
+.bannerAssets-img {
     width: 60px;
     height: 54px;
     margin-right: 20px;
 }
-.bannerAssets-content{
-flex: 1;
-font-size: 1.6rem;
-font-weight: 600;
-text-align: center;
-p{
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin-top: 6px;
+.bannerAssets-content {
+    flex: 1;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    p {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-top: 6px;
+    }
 }
-}
-.bannerAssets-contentTitle{
+.bannerAssets-contentTitle {
     color: var(--PrimaryColor);
     margin-bottom: 2px;
 }

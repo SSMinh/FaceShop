@@ -27,7 +27,7 @@ function SwiperSliders() {
     ];
     const renderTitle = () => {
         return assetsBanner.map((item, index) => (
-            <div key={index} className={sx('bannerAssets')}>
+            <div key={index} className={sx('bannerAssets d-sm-flex flex-sm-column align-items-sm-center  d-md-flex flex-md-row ')}>
                 <img className={sx('bannerAssets-img')} src={item.img} alt={item.imgAlt} />
                 <div className={sx('bannerAssets-content')}>
                     <span className={sx('bannerAssets-contentTitle')}>{item.title}</span>
@@ -39,7 +39,7 @@ function SwiperSliders() {
     return (
         <div className={sx('wrapper container my-4')}>
             <div className={sx('full-banner row ')}>
-                <div className={sx('left-banner col-md-12 col-lg-8 d-none d-md-block')}>
+                <div className={sx('left-banner d-none  d-md-block col-md-12 col-lg-8 ')}>
                     <Swiper
                         modules={[Navigation, Pagination, Autoplay, A11y]}
                         spaceBetween={50}
@@ -55,17 +55,17 @@ function SwiperSliders() {
                         onSlideChange={() => ''}
                     >
                         <SwiperSlide>
-                            {' '}
-                            <div className={sx('banner1')} />
+                            <div className={sx('swiper-slide swiper-slide-active')}>
+                                <div className={sx('banner1')} />
+                            </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            {' '}
                             <div className={sx('banner2')} />
                         </SwiperSlide>
                     </Swiper>
                 </div>
-                <div className={sx('right-banner col-md-12 col-lg-4')}>
-                    <div className={sx('bannerHome  d-none d-md-flex flex-md-column align-items-md-center h-100')}>
+                <div className={sx('right-banner col-12 col-lg-4')}>
+                    <div className={sx('bannerHome d-none d-sm-flex flex-sm-row d-md-flex flex-md-column h-100')}>
                         {renderTitle()}
                     </div>
                 </div>
