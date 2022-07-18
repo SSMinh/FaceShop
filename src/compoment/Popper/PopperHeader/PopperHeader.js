@@ -25,7 +25,7 @@ function PopperHeader() {
         });
     };
     return (
-        <>
+        <div>
             <Tippy
                 placement={'bottom-start'}
                 interactive
@@ -56,7 +56,7 @@ function PopperHeader() {
                     <CartHeader data={cartProducts} />
                 </div>
             </Tippy>
-        </>
+        </div>
     );
 }
 
